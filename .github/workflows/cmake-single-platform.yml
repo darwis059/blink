@@ -45,7 +45,7 @@ jobs:
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: |
         cd build
-        cmake .. -DSQLite3_LIBRARY=D:\a\blink\sqlite -DSQLite3_INCLUDE_DIR=D:\a\blink\sqlite\sqlite-amalgamation-3490200 
+        cmake .. -DSQLite3_LIBRARY=D:\a\blink\sqlite\sqlite3.lib -DSQLite3_INCLUDE_DIR=D:\a\blink\sqlite\sqlite-amalgamation-3490200 
         ls
         make
 
