@@ -24,7 +24,9 @@ jobs:
         arch: x64
 
     - name: build dir
-      run: mkdir build && cd build
+      run: mkdir build
+    - name: cd build
+      run: cd build
       
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
