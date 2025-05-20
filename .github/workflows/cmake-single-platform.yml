@@ -26,7 +26,7 @@ jobs:
     - name: build dir
       run: |
         mkdir build
-        mkdir sqlite
+        mkdir D:\a\blink\sqlite
         Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-amalgamation-3490200.zip -OutFile D:\a\blink\sqlite\sqlite-amalgamation-3490200.zip
         Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-dll-win-x64-3490200.zip -OutFile D:\a\blink\sqlite\sqlite-dll-win-x64-3490200.zip
         Expand-Archive -Path D:\a\blink\sqlite\sqlite-amalgamation-3490200.zip -DestinationPath D:\a\blink\sqlite
