@@ -27,9 +27,9 @@ jobs:
       run: |
         mkdir build
         mkdir sqlite
-        Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-amalgamation-3490200 -OutFile sqlite\sqlite-amalgamation-3490200
+        Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-amalgamation-3490200.zip -OutFile sqlite\sqlite-amalgamation-3490200.zip
         Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-dll-win-x64-3490200.zip -OutFile sqlite\sqlite-dll-win-x64-3490200.zip
-        Expand-Archive -Path sqlite\sqlite-amalgamation-3490200 -DestinationPath sqlite
+        Expand-Archive -Path sqlite\sqlite-amalgamation-3490200.zip -DestinationPath sqlite
         Expand-Archive -Path sqlite\sqlite-dll-win-x64-3490200.zip -DestinationPath sqlite
         # lib /DEF:sqlite\sqlite3.def /OUT:sqlite\sqlite3.lib /MACHINE:x64
         ls sqlite
