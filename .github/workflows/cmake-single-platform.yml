@@ -37,3 +37,10 @@ jobs:
       # Build your program with the given configuration
       run: make #--build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
+    - name: 'Upload artifact'
+      uses: actions/upload-artifact@v4
+      with:
+        name: blink
+        retention-days: 3
+        path: |
+          *.exe
