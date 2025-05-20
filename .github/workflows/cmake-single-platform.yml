@@ -19,10 +19,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Setup GCC
-      uses: Dup4/actions-setup-gcc@v1
+    - name: Set up GCC
+      uses: egor-tensin/setup-gcc@v1
       with:
         version: latest
+        platform: x64
     # - uses: TheMrMilchmann/setup-msvc-dev@v3
     #   with:
     #     arch: x64
