@@ -32,7 +32,7 @@ jobs:
         Expand-Archive -Path D:\a\blink\sqlite\sqlite-amalgamation-3490200.zip -DestinationPath D:\a\blink\sqlite
         Expand-Archive -Path D:\a\blink\sqlite\sqlite-dll-win-x64-3490200.zip -DestinationPath D:\a\blink\sqlite
         lib /DEF:D:\a\blink\sqlite\sqlite3.def /OUT:D:\a\blink\sqlite\sqlite3.lib /MACHINE:x64
-        ls sqlite
+        ls D:\a\blink\sqlite
         # ls D:\a\blink\blink\sqlite\sqlite-src-3490200
         # cp sqlite\sqlite3.def "C:/Program Files/OpenSSL/lib/VC/"
         # cp sqlite\sqlite3.dll "C:/Program Files/OpenSSL/lib/VC/"
