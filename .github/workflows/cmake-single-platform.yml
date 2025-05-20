@@ -23,9 +23,9 @@ jobs:
       with:
         arch: x64
 
-    # - name: build dir
-    #   run: |
-    #     mkdir build
+    - name: build dir
+      run: |
+        mkdir build
     #     cd build
       
     - name: Configure CMake
