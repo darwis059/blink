@@ -31,7 +31,7 @@ jobs:
         Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-dll-win-x64-3490200.zip -OutFile D:\a\blink\sqlite\sqlite-dll-win-x64-3490200.zip
         Expand-Archive -Path D:\a\blink\sqlite\sqlite-amalgamation-3490200.zip -DestinationPath D:\a\blink\sqlite
         Expand-Archive -Path D:\a\blink\sqlite\sqlite-dll-win-x64-3490200.zip -DestinationPath D:\a\blink\sqlite
-        lib /DEF:D:\a\blink\sqlite\sqlite3.def /OUT:D:\a\blink\sqlite\sqlite3.lib /MACHINE:x64
+        # lib /DEF:D:\a\blink\sqlite\sqlite3.def /OUT:D:\a\blink\sqlite\sqlite3.lib /MACHINE:x64
         ls D:\a\blink\sqlite
         # ls D:\a\blink\blink\sqlite\sqlite-src-3490200
         # cp sqlite\sqlite3.def "C:/Program Files/OpenSSL/lib/VC/"
