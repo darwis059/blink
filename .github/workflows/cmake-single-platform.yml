@@ -27,11 +27,11 @@ jobs:
       run: |
         mkdir build
         mkdir sqlite
-        Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-amalgamation-3490200.zip -OutFile sqlite\sqlite-amalgamation-3490200.zip
-        Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-dll-win-x64-3490200.zip -OutFile sqlite\sqlite-dll-win-x64-3490200.zip
-        Expand-Archive -Path sqlite\sqlite-amalgamation-3490200.zip -DestinationPath sqlite
-        Expand-Archive -Path sqlite\sqlite-dll-win-x64-3490200.zip -DestinationPath sqlite
-        lib /DEF:sqlite\sqlite3.def /OUT:sqlite\sqlite3.lib /MACHINE:x64
+        Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-amalgamation-3490200.zip -OutFile ..\sqlite\sqlite-amalgamation-3490200.zip
+        Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-dll-win-x64-3490200.zip -OutFile ..\sqlite\sqlite-dll-win-x64-3490200.zip
+        Expand-Archive -Path ..\sqlite\sqlite-amalgamation-3490200.zip -DestinationPath ..\sqlite
+        Expand-Archive -Path ..\sqlite\sqlite-dll-win-x64-3490200.zip -DestinationPath ..\sqlite
+        lib /DEF:..\sqlite\sqlite3.def /OUT:..\sqlite\sqlite3.lib /MACHINE:x64
         ls sqlite
         # ls D:\a\blink\blink\sqlite\sqlite-src-3490200
         # cp sqlite\sqlite3.def "C:/Program Files/OpenSSL/lib/VC/"
@@ -44,11 +44,12 @@ jobs:
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: |
-        cmake . -DSQLite3_LIBRARY=D:\a\blink\blink\sqlite 
+        cd build
+        cmake .. -DSQLite3_LIBRARY=D:\a\blink\sqlite -DSQLite3_INCLUDE_DIR=D:\a\blink\sqlite\sqlite-amalgamation-3490200 
         ls
         make
 
-    # -DSQLite3_INCLUDE_DIR=D:\a\blink\blink\sqlite\sqlite-amalgamation-3490200 
+    # 
 
     # - name: Build
     #   # Build your program with the given configuration
