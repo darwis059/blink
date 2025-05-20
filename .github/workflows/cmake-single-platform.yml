@@ -34,10 +34,10 @@ jobs:
         lib /DEF:sqlite\sqlite3.def /OUT:sqlite\sqlite3.lib /MACHINE:x64
         ls sqlite
         ls D:\a\blink\blink\sqlite\sqlite-src-3490200
-        cp sqlite\sqlite3.def C:\Windows\SysWOW64
-        cp sqlite\sqlite3.dll C:\Windows\SysWOW64
-        cp sqlite\sqlite3.exp C:\Windows\SysWOW64
-        cp sqlite\sqlite3.lib C:\Windows\SysWOW64
+        cp sqlite\sqlite3.def "C:/Program Files/OpenSSL/lib/VC/"
+        cp sqlite\sqlite3.dll "C:/Program Files/OpenSSL/lib/VC/"
+        cp sqlite\sqlite3.exp "C:/Program Files/OpenSSL/lib/VC/"
+        cp sqlite\sqlite3.lib "C:/Program Files/OpenSSL/lib/VC/"
     #     cd build
       
     - name: Configure CMake
