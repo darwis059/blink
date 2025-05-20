@@ -43,4 +43,4 @@ jobs:
         name: blink
         retention-days: 3
         path: |
-          build
+          build\*.exe
