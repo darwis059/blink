@@ -26,6 +26,12 @@ jobs:
     - name: build dir
       run: |
         mkdir build
+        mkdir sqlite
+        Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-src-3490200.zip -OutFile sqlite\sqlite-src-3490200.zip
+        Invoke-WebRequest -Uri https://www.sqlite.org/2025/sqlite-dll-win-x64-3490200.zip -OutFile sqlite\sqlite-dll-win-x64-3490200.zip
+        Expand-Archive -Path sqlite\sqlite-src-3490200.zip -DestinationPath sqlite
+        Expand-Archive -Path sqlite\sqlite-dll-win-x64-3490200.zip -DestinationPath sqlite
+        lib /DEF:sqlite\sqlite3.def /OUT:sqlite3.lib /MACHINE:x64
     #     cd build
       
     - name: Configure CMake
